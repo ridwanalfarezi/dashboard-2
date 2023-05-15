@@ -56,6 +56,11 @@ li {
   align-items: center;
   height: 64px;
   font-weight: 700;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--light);
 }
 
 #sidebar .icon {
@@ -180,6 +185,10 @@ nav {
   display: flex;
   align-items: center;
   gap: 28px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 nav .toggle-sidebar {
@@ -469,6 +478,120 @@ main .content-data .head .menu-link a:hover {
   background-color: var(--grey);
 }
 
+main .chat-box {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+main .chat-box::-webkit-scrollbar {
+  display: none;
+}
+
+main .chat-box .day {
+  text-align: center;
+}
+
+main .chat-box .day span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: var(--light-blue);
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+main .chat-box .msg img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+main .chat-box .msg {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+main .chat-box .profile .username {
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+main .chat-box .profile .time {
+  font-size: 12px;
+  color: var(--dark-grey);
+}
+
+main .chat-box .chat p {
+  font-size: 14px;
+  padding: 6px 10px;
+  display: inline-block;
+  max-width: 240px;
+  line-height: 150%;
+}
+
+main .chat-box .msg:not(.me) .chat p {
+  border-radius: 0 5px 5px 5px;
+  background-color: var(--blue);
+  color: var(--light);
+}
+
+main .chat-box .msg.me {
+  justify-content: flex-end;
+}
+
+main .chat-box .msg.me .profile {
+  text-align: right;
+}
+
+main .chat-box .msg.me p {
+  background-color: var(--grey);
+  border-radius: 5px 0 5px 5px;
+}
+
+main form {
+  margin-top: 6px;
+}
+
+main .form-group {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+main .form-group input {
+  flex-grow: 1;
+  padding: 10px 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--grey);
+  transition: all 0.3s ease;
+}
+
+main .form-group input:focus {
+  box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
+}
+
+main .btn-send {
+  padding: 0 16px;
+  background-color: var(--blue);
+  border-radius: 5px;
+  color: var(--light);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+main .btn-send:hover {
+  background-color: var(--dark-blue);
+}
 /* Main */
 
 /* Content */
