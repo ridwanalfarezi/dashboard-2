@@ -35,13 +35,23 @@ li {
 /* Sidebar */
 #sidebar {
   position: fixed;
-  width: 260px;
+  max-width: 260px;
+  width: 100%;
   background-color: var(--light);
   top: 0;
   left: 0;
   height: 100%;
   overflow-y: auto;
   scrollbar-width: none;
+  z-index: 200;
+}
+
+#sidebar.hide {
+  max-width: 60px;
+}
+
+#sidebar.hide:hover {
+  max-width: 260px;
 }
 
 #sidebar::-webkit-scrollbar {
@@ -52,7 +62,6 @@ li {
   font-size: 24px;
   color: var(--blue);
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 64px;
   font-weight: 700;
@@ -61,6 +70,8 @@ li {
   left: 0;
   z-index: 100;
   background-color: var(--light);
+  transition: all 0.3s ease;
+  padding: 0 6px;
 }
 
 #sidebar .icon {
@@ -68,6 +79,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 6px;
 }
 
 #sidebar .icon-right {
@@ -75,9 +87,18 @@ li {
   transition: all 0.3s ease;
 }
 
+#sidebar.hide .side-menu {
+  padding: 0 6px;
+}
+
+#sidebar.hide:hover .side-menu {
+  padding: 0 20px;
+}
+
 #sidebar .side-menu {
   margin-block: 36px;
   padding-inline: 20px;
+  transition: all 0.3s ease;
 }
 
 #sidebar .side-menu a {
@@ -89,6 +110,7 @@ li {
   transition: all 0.3s ease;
   border-radius: 10px;
   margin-block: 4px;
+  white-space: nowrap;
 }
 
 #sidebar .side-menu > li > a:hover {
@@ -111,6 +133,16 @@ li {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--dark-grey);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+#sidebar.hide:hover .divider {
+  text-align: left;
+}
+
+#sidebar.hide .divider {
+  text-align: center;
 }
 
 #sidebar .side-dropdown {
@@ -126,6 +158,10 @@ li {
 
 #sidebar .side-dropdown a:hover {
   color: var(--blue);
+}
+
+#sidebar.hide .ads {
+  display: none;
 }
 
 #sidebar .ads {
@@ -174,6 +210,12 @@ li {
   position: relative;
   width: calc(100% - 260px);
   left: 260px;
+  transition: all 0.3s ease;
+}
+
+#sidebar.hide + #content {
+  width: calc(100% - 60px);
+  left: 60px;
 }
 
 /* Navbar */
@@ -476,6 +518,16 @@ main .content-data .head .menu-link a {
 
 main .content-data .head .menu-link a:hover {
   background-color: var(--grey);
+}
+
+main .content-data .chart {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+main .content-data .chart::-webkit-scrollbar {
+  display: none;
 }
 
 main .chat-box {
