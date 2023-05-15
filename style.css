@@ -300,4 +300,103 @@ nav .profile .profile-link a:hover {
 
 /* Navbar */
 
+/* Main */
+main {
+  width: 100%;
+  padding: 24px 20px 20px 20px;
+}
+
+main .title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+main .breadcrumbs {
+  display: flex;
+  gap: 6px;
+}
+
+main .breadcrumbs li,
+main .breadcrumbs li a {
+  font-size: 14px;
+}
+
+main .breadcrumbs li a {
+  color: var(--blue);
+}
+
+main .breadcrumbs li a.active,
+main .breadcrumbs li a.divider {
+  color: var(--dark-grey);
+  pointer-events: none;
+}
+
+main .info-data {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+main .info-data .card {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--light);
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+main .card .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+main .card .head h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+main .card .head p {
+  font-size: 14px;
+}
+
+main .card .head .icon {
+  font-size: 20px;
+  color: var(--green);
+}
+
+main .card .head .icon.down {
+  color: var(--red);
+}
+
+main .card .progress {
+  display: block;
+  margin-top: 24px;
+  height: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--grey);
+  overflow-y: hidden;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+main .card .progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--blue);
+  width: var(--value);
+}
+
+main .card .label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Main */
+
 /* Content */
